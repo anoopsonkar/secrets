@@ -57,11 +57,11 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-const port = process.env.PORT || 3000;
+
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: `${port}/auth/google/secrets`,,
+    callbackURL: "https://secret-app-anoop.herokuapp.com/auth/google/secrets",
   },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile)
